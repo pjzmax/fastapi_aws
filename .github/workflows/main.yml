@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.11
+          python-version: 3.11.2
           # optional: architecture: x64 or x86. Default to x64 if not specified 
 
       # Step-2 Install Python virtual ENV
