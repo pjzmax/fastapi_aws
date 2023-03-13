@@ -53,7 +53,7 @@ jobs:
       - name: Upload zip file artifact
         # uploads artifacts from the workflow allowing to share data between jobs
         # Stores daga once a workflow is complete
-        uses: actions/upload-artifac@v2
+        uses: actions/upload-artifact@v2
           name: api
           path: api.zip
 
