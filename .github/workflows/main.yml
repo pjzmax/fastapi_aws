@@ -22,7 +22,7 @@ jobs:
         # This action sets up a Python environment for use in actions
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.11
           # optional: architecture: x64 x64 or x86. Defaults to x64 if not specified
 
       # Step-2 Install Python Virtual ENV
@@ -48,7 +48,7 @@ jobs:
      
       - name: Run Python commands
         run: |
-          python3.8 -m venv venv
+          python3 -m venv venv
           source venv/bin/activate
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
 
