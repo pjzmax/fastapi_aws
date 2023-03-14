@@ -38,9 +38,9 @@ jobs:
 
       # Step-4 Build a Virtual ENV, but only if it doesn't already exist
       - name: Activate Virtual ENV
-        run: python -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
+        run: /opt/hosttoolcache/Python/3.11.2/x64/python3 -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
         if: steps.cache-venv.output.cache-hit != 'true'
-        
+
       - name: Run Tests
         # Note that you have o activate the virtualenv in every step
         # because GitHub actions doesn't preserve the environment
