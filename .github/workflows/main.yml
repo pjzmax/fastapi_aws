@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: 3.11
           # optional: architecture: x64 or x86. Default to x64 if not specified 
-ß
+
       # Step-2 Install Python virtual ENV
       - name: Install Python Virtual ENV
         run: pip3 install virtualenv
