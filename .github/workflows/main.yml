@@ -15,11 +15,11 @@ jobs:
 
       # Step-1 Setup Python
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: 3.11
           # optional: architecture: x64 or x86. Default to x64 if not specified 
-
+ß
       # Step-2 Install Python virtual ENV
       - name: Install Python Virtual ENV
         run: pip3 install virtualenv
@@ -38,7 +38,7 @@ jobs:
 
       # Step-4 Build a Virtual ENV, but only if it doesn't already exist
       - name: Activate Virtual ENV
-        run: /opt/hosttoolcache/Python/3.11.2/x64/python3 -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
+        run: python3 -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
         if: steps.cache-venv.output.cache-hit != 'true'
 
       - name: Run Tests
