@@ -30,14 +30,13 @@ jobs:
 
       - run: pip install -r requirements.txt
         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
-
       - name: Run Tests
         # Note that you have o activate the virtualenv in every step
         # because GitHub actions doesn't preserve the environment
         run: . venv/bin/activate && pytest
       - name: Create archive of dependencies
         run: /
-          cd /home/runner/.virtualenvs/.venv/lib/python3.11/site-packages
+          cd ./virtualenvs/./venv/lib/python3.11/site-packages
           zip -r9 ../../../../api.zip .
       - name: Add API files to Zip file
         run: cd ./api && zip -g ../api.zip -r .
