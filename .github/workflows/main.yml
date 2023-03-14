@@ -26,11 +26,11 @@ jobs:
         id: cache-virtualenv
 
       - uses: syphar/restore-pip-download-cache@v1
-            if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+        if: steps.cache-virtualenv.outputs.cache-hit != 'true'
 
       - run: pip install -r requirements.txt
         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
-        
+
       - name: Run Tests
         # Note that you have o activate the virtualenv in every step
         # because GitHub actions doesn't preserve the environment
