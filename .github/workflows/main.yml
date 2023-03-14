@@ -43,8 +43,8 @@ jobs:
       # Step-4 Build a Virtual ENV, but only if it doesn't already exist
       - name: Activate Virtual ENV
         run: |
-          pip install --upgrade pip
-          python -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
+          echo "VIRTUAL ENV": $VIRTUAL_ENV
+          python3.11 -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
         if: steps.cache-venv.outputs.cache-hit != 'true'
 
       - name: Run Tests   
